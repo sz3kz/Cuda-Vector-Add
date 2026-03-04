@@ -3,4 +3,6 @@
 
 #include <iostream>
 
+constexpr int VECTOR_LENGTH = 5;
+
 #endif
