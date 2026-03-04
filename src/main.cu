@@ -13,8 +13,9 @@ int main(){
   vectorInitialize(vector_B, VECTOR_LENGTH, RAND_UPPER_LIMIT);
   vectorInitialize(vector_C, VECTOR_LENGTH, RAND_UPPER_LIMIT);
 
-  for (int i = 0; i < VECTOR_LENGTH ; ++i)
-    printf("%2d | %2d | %2d \n", vector_A[i], vector_B[i], vector_C[i]);
+  vectorPrint("Vector A", vector_A, VECTOR_LENGTH);
+  vectorPrint("Vector B", vector_B, VECTOR_LENGTH);
+  vectorPrint("Vector C", vector_C, VECTOR_LENGTH);
 
   return 0;
 }
