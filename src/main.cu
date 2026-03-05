@@ -7,7 +7,7 @@ int main(){
 
   vector_A = vectorInitialize(VECTOR_LENGTH, RAND_UPPER_LIMIT);
   vector_B = vectorInitialize(VECTOR_LENGTH, RAND_UPPER_LIMIT);
-  vector_C = new int [VECTOR_LENGTH] {0};
+  vector_C = new int [VECTOR_LENGTH] ();
 
   vectorPrint("Vector A", vector_A, VECTOR_LENGTH);
   vectorPrint("Vector B", vector_B, VECTOR_LENGTH);
