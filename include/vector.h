@@ -7,5 +7,7 @@
 
 void vectorInitialize(int * vector, unsigned int length, unsigned int upper_limit);
 void vectorPrint(const char * prompt, int * vector, unsigned int length);
+__global__ void vectorAdd(int * destination, int * vector1, int * vector2, 
+    unsigned int threads_per_block);
 
 #endif
