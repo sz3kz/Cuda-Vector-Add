@@ -8,6 +8,7 @@ pkgs.mkShell {
     clang # Note: CUDA often lags behind the latest GCC version
     gnumake
     cmake
+    valgrind
 
     # CUDA Packages
     cudaPackages.cuda_nvcc

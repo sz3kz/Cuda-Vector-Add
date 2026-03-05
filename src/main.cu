@@ -17,5 +17,9 @@ int main(){
   vectorPrint("Vector B", vector_B, VECTOR_LENGTH);
   vectorPrint("Vector C", vector_C, VECTOR_LENGTH);
 
+  delete[] vector_A;
+  delete[] vector_B;
+  delete[] vector_C;
+
   return 0;
 }
