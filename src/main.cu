@@ -10,9 +10,9 @@ int main(){
   vector_B = vector::initialize(VECTOR_LENGTH, RAND_UPPER_LIMIT);
   vector_C = new int [VECTOR_LENGTH] ();
 
-  vector::print("Vector A", vector_A, VECTOR_LENGTH, calculateWidth(RAND_UPPER_LIMIT));
-  vector::print("Vector B", vector_B, VECTOR_LENGTH, calculateWidth(RAND_UPPER_LIMIT));
-  vector::print("Vector C", vector_C, VECTOR_LENGTH, calculateWidth(RAND_UPPER_LIMIT));
+  vector::print("Vector A", vector_A, VECTOR_LENGTH, interractive::calculateWidth(RAND_UPPER_LIMIT));
+  vector::print("Vector B", vector_B, VECTOR_LENGTH, interractive::calculateWidth(RAND_UPPER_LIMIT));
+  vector::print("Vector C", vector_C, VECTOR_LENGTH, interractive::calculateWidth(RAND_UPPER_LIMIT));
 
   int * vector_gpu_A, * vector_gpu_B, * vector_gpu_C;
 
@@ -29,7 +29,7 @@ int main(){
 
   cudaMemcpy(vector_C, vector_gpu_C, sizeof(int) * VECTOR_LENGTH, cudaMemcpyDeviceToHost);
 
-  vector::print("Vector C", vector_C, VECTOR_LENGTH, calculateWidth(RAND_UPPER_LIMIT));
+  vector::print("Vector C", vector_C, VECTOR_LENGTH, interractive::calculateWidth(RAND_UPPER_LIMIT));
 
   delete[] vector_A;
   delete[] vector_B;

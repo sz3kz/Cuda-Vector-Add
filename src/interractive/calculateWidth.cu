@@ -1,6 +1,6 @@
 #include "../../include/interractive.h"
 
-unsigned int calculateWidth(int random_upper_limit){
+unsigned int interractive::calculateWidth(int random_upper_limit){
   int width = 1;
   random_upper_limit--;
   do {
