@@ -1,5 +1,6 @@
 #include "../include/main.h"
 #include "../include/vector.h"
+#include "../include/interractive.h"
 
 int main(){
   srand(time(NULL));
@@ -9,9 +10,9 @@ int main(){
   vector_B = vectorInitialize(VECTOR_LENGTH, RAND_UPPER_LIMIT);
   vector_C = new int [VECTOR_LENGTH] ();
 
-  vectorPrint("Vector A", vector_A, VECTOR_LENGTH);
-  vectorPrint("Vector B", vector_B, VECTOR_LENGTH);
-  vectorPrint("Vector C", vector_C, VECTOR_LENGTH);
+  vectorPrint("Vector A", vector_A, VECTOR_LENGTH, calculateWidth(RAND_UPPER_LIMIT));
+  vectorPrint("Vector B", vector_B, VECTOR_LENGTH, calculateWidth(RAND_UPPER_LIMIT));
+  vectorPrint("Vector C", vector_C, VECTOR_LENGTH, calculateWidth(RAND_UPPER_LIMIT));
 
   int * vector_gpu_A, * vector_gpu_B, * vector_gpu_C;
 
@@ -28,7 +29,7 @@ int main(){
 
   cudaMemcpy(vector_C, vector_gpu_C, sizeof(int) * VECTOR_LENGTH, cudaMemcpyDeviceToHost);
 
-  vectorPrint("Vector C", vector_C, VECTOR_LENGTH);
+  vectorPrint("Vector C", vector_C, VECTOR_LENGTH, calculateWidth(RAND_UPPER_LIMIT));
 
   delete[] vector_A;
   delete[] vector_B;
