@@ -9,6 +9,7 @@ file(GLOB SOURCES
     include/*.h
     src/main.cu
     src/*/*.cu
+    src/*/*.cpp
 )
 
 add_executable(cuda-vector-add ${SOURCES})
