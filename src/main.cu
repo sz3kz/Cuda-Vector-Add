@@ -25,7 +25,7 @@ int main(){
   cudaMemcpy(vector_gpu_C, vector_C, sizeof(int) * VECTOR_LENGTH, cudaMemcpyHostToDevice);
 
   vector::add<<<(VECTOR_LENGTH + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK,THREADS_PER_BLOCK>>>(
-      vector_gpu_C, vector_gpu_A, vector_gpu_B, VECTOR_LENGTH, THREADS_PER_BLOCK);
+      vector_gpu_C, vector_gpu_A, vector_gpu_B, VECTOR_LENGTH);
 
   cudaMemcpy(vector_C, vector_gpu_C, sizeof(int) * VECTOR_LENGTH, cudaMemcpyDeviceToHost);
 
