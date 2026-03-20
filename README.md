@@ -15,5 +15,5 @@ nix-shell # for NixOS, other linux distros should have the necessary software be
 mkdir build && cd build/
 cmake ..
 make
-./cuda-vector-add
+./compute
 ```
