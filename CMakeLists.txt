@@ -12,4 +12,4 @@ file(GLOB SOURCES
     src/*/*.cpp
 )
 
-add_executable(cuda-vector-add ${SOURCES})
+add_executable(compute ${SOURCES})
