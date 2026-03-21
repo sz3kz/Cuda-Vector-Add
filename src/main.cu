@@ -12,7 +12,7 @@ int main(){
 
   vector::print("Vector A", vector_A, VECTOR_LENGTH, interractive::calculateWidth(RAND_UPPER_LIMIT));
   vector::print("Vector B", vector_B, VECTOR_LENGTH, interractive::calculateWidth(RAND_UPPER_LIMIT));
-  vector::print("Vector C", vector_C, VECTOR_LENGTH, interractive::calculateWidth(RAND_UPPER_LIMIT));
+  //vector::print("Vector C", vector_C, VECTOR_LENGTH, interractive::calculateWidth(RAND_UPPER_LIMIT));
 
   int * vector_gpu_A, * vector_gpu_B, * vector_gpu_C;
 
