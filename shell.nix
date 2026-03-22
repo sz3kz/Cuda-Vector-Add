@@ -15,6 +15,7 @@ pkgs.mkShell {
     cudaPackages.cuda_cudart
     cudaPackages.libcublas
     cudaPackages.cuda_cccl # C++ Core Compute Libraries
+    cudaPackages.nsight_compute
   ];
 
   shellHook = ''
