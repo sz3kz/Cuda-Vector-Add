@@ -1,11 +1,11 @@
 { pkgs ? import <nixpkgs> { config.allowUnfree = true; } }:
 
-pkgs.mkShell {
-  name = "cuda-env";
+(pkgs.buildFHSEnv {
+  name = "My-Cuda-Environment";
 
-  buildInputs = with pkgs; [
-    # C++ Compiler & Build Tools
-    clang # Note: CUDA often lags behind the latest GCC version
+  targetPkgs = pkgs: with pkgs; [ 
+    # C++
+    clang
     gnumake
     cmake
     valgrind
@@ -18,16 +18,11 @@ pkgs.mkShell {
     cudaPackages.nsight_compute
   ];
 
-  shellHook = ''
-    export CC=clang
-    export CXX=clang++
-    export CUDA_PATH=${pkgs.cudaPackages.cuda_nvcc}
-    export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath [ 
-      pkgs.cudaPackages.cuda_cudart 
-      pkgs.linuxPackages.nvidia_x11 
-    ]}:$LD_LIBRARY_PATH
-    
-    echo "CUDA Dev Environment Loaded"
-    nvcc --version
+  runScript = "bash";
+  profile = ''
+    export CUDA_PATH=${pkgs.cudatoolkit}
+    # export LD_LIBRARY_PATH=${pkgs.linuxPackages.nvidia_x11}/lib
+    export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
+    export EXTRA_CCFLAGS="-I/usr/include"
   '';
-}
+}).env
