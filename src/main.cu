@@ -3,7 +3,7 @@
 #include "../include/interractive.h"
 
 int main(){
-  srand(time(NULL));
+  srand(static_cast<unsigned int>(time(NULL)));
   int * vector_A, * vector_B, * vector_C;
 
   vector_A = vector::initialize(VECTOR_LENGTH, RAND_UPPER_LIMIT);
