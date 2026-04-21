@@ -11,8 +11,9 @@ A simple Vector Addition program written utilizing the CUDA parallel computing p
 ```bash
 git clone git@github.com:sz3kz/Cuda-Vector-Add.git
 cd Cuda-Vector-Add
-nix-shell # for NixOS, other linux distros should have the necessary software be available for the repository
-mkdir build && cd build/
+make cmake-init
+mkdir build
+cd build/
 cmake ..
 make
 ./compute
