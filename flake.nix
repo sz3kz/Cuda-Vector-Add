@@ -1,5 +1,5 @@
 {
-  description = "Hello World in CUDA";
+  description = "Simple Vector Addition in CUDA";
 
   # Define dependencies (like the unstable version of nix packages)
   inputs = {          
@@ -26,16 +26,15 @@
         in {
           default = nixpkgsFor.${system}.mkShell {
             buildInputs = with nixpkgsFor.${system}; [
-              # C++ Compiler & Build Tools
-              clang # Note: CUDA often lags behind the latest GCC version
+              clang
               gnumake
               cmake
 
-              # CUDA Packages
-              cudaPackages.cuda_nvcc
-              cudaPackages.cuda_cudart
-              cudaPackages.libcublas
-              cudaPackages.cuda_cccl # C++ Core Compute Libraries
+              cudaPackages.cuda_nvcc      # fetch compiler
+              cudaPackages.cuda_cudart    # runtime?
+              cudaPackages.libcublas      # BLAS?
+              cudaPackages.cuda_cccl      # C++ libraries
+              cudaPackages.nsight_compute # profiler
             ];
             shellHook = ''
               export CC=clang
