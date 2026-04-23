@@ -1,1 +1,1 @@
-include make/cmake.mk
+include make/*.mk
