@@ -6,18 +6,15 @@ CPP_DIRECTORY=CPP/
 MAKEFILE_DIRECTORY=make/
 CMAKE_CLIENT_MAKEFILE=cmake.mk
 
-# This initializes the existing cmake
-dotfiles-init:
-	git submodule update --init													# fetches existing commit
-	cd ${ROOT_DIRECTORY}${CPP_DIRECTORY} && make dotfiles-sync
-	cd ${ROOT_DIRECTORY}${CPP_DIRECTORY} && make cmake-sync
-	cd ${ROOT_DIRECTORY}${CPP_DIRECTORY} && make ncu-sync
+
+#Create "make/" directory
+dotfiles-setup:
+	-mkdir ${CLIENT_ROOT_DIRECTORY}${MAKEFILE_DIRECTORY}
 
 # This updates the target cmake 
 dotfiles-update:
 	git submodule update --init --remote								# fetches latest commit
-	cd ${ROOT_DIRECTORY}${CPP_DIRECTORY} && make dotfiles-sync
-	cd ${ROOT_DIRECTORY}${CPP_DIRECTORY} && make cmake-initialize
+	cd ${ROOT_DIRECTORY}${CPP_DIRECTORY} && make cmake--initialize
 	cd ${ROOT_DIRECTORY}${CPP_DIRECTORY} && make ncu-sync
 
 dotfiles-purge:
