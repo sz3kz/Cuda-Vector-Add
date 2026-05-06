@@ -2,7 +2,7 @@
 A simple Vector Addition program written utilizing the CUDA parallel computing platform.
 
 ## Requirements
-* a C++ compiler
+* a C++ compiler (clang preferred)
 * CUDA developer environment
 * GNU make
 * Cmake
